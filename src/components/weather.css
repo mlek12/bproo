@@ -1,0 +1,60 @@
+.weather-container {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    width: 800px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    top: 150px;
+  }
+  
+  .weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .weather-icon {
+    margin-right: 80px;
+  }
+  
+  .weather-details {
+    text-align: left;
+  }
+  
+  .weather-details p {
+    margin: 5px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .weather-details p:first-child {
+    margin-top: 0;
+  }
+  .weather-icon img {
+    width: 150px; 
+    height: 150px; 
+  }
+  
+@media only screen and (max-width: 800px) {
+    .weather-container {
+      width: 70%; 
+      padding: 5px; 
+      top: 90px;
+    }
+  
+    .weather-info {
+      flex-direction: column; 
+    }
+  
+    .weather-icon {
+      margin-right: 0; 
+      margin-bottom: 20px;
+    }
+    .weather-details {
+        text-align:center;
+        font-size: 20px;
+      }
+  }
+  

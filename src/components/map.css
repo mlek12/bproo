@@ -1,0 +1,16 @@
+/* map.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #mapid {
+    padding: 100px;
+    width: 20%; /* Sesuaikan lebar sesuai kebutuhan */
+    height: 5%; /* Sesuaikan tinggi sesuai kebutuhan */
+  }
+  
