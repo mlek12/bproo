@@ -1,173 +1,125 @@
-  *, *::after, *::before {
-    margin: 0;
-    box-sizing: border-box;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 
-  html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000; 
-    color: #ffffff;
-    background-size: cover;
-    background-image:url(https://images.unsplash.com/photo-1590116747708-1cb47ffa20bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow-x: hidden;
-    z-index: 1000;
-    
-  }
+}
 
-  body {
-    font-size: 1.6rem;
+.card {
+  top: 80px;
+  width: 300px;
+  height: 450px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 0px;
+}
 
-  }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-  li {
-    list-style: none;
-  }
+.card-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
-  a {
-    text-decoration: none;
-    color: #ffffff;
-  }
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
 
-  .nav__brand {
-    text-transform: uppercase;
-    font-weight: bold;
-    display: fixed;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
 
-  .nav {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    height: 8vh; 
-    padding: 1rem;  
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    
-  }
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  padding-top: 85px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  justify-content: center;
+  z-index: 1000;
+  overflow: auto;
+}
 
-  .nav__logo {
-    height: 40px; 
-    margin-right: 10px;
-  }
+.popup-content {
+  background: white;
+  top: 90px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 900px;
+  max-height: 80vh; /* Menambahkan batasan tinggi maksimum */
+  position: fixed;
+  animation: slideIn 0.3s ease-in-out;
+  z-index: 1000;
+  overflow: auto; /* Menambahkan properti overflow */
+}
 
-  .nav__brand {
-    text-transform: uppercase;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.4rem;
-  }
-
-  .nav__menu a {
-    padding: 10px;
-    transition: background-color 0.3s ease;
-    
-  }
-
-  .nav__menu a:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    width: 25%;
-  }
-  .nav__toggler {
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-
-  .nav__toggler:hover {
-    transform: scale(1.1);
-    background-color:  rgba(27, 59, 44, 0.8); 
-  }
-
-  .nav__logo {
-    transition: transform 0.3s ease;
-  }
-
-  .nav__logo:hover {
-    transform: scale(1.1);
-  }
-  .nav__menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 1rem;
-    font-size: 1.2rem;
-    z-index: 1000;
-  }   
-  .nav__toggler div {
-    width: 1.4rem;
-    height: 0.2rem;
-    margin: 0.3rem;
-    border-radius: 3px;
-    background: rgb(255, 255, 255);
-    z-index: 1000;
-  }
-
-  .nav__toggler {
-    display: none;
-  }
-  .nav__logo {
-    height: 60px; 
-    margin-right: 10px; 
-  }
-
-  /* Media Query */
-  @media screen and (max-width: 768px) {
-    .nav__toggler {
-      display: block;
-      position: relative;
-      cursor: pointer;
-      border-radius: 5px;
-      right: 2.4%;
-    
-    }
-
-    .nav__menu {
-      position: fixed;
-      top: 0;
-      right: 0%;
-      top: 0%;
-      width: 150px;
-      height: 70vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 0px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(91px);
-      flex-direction: column; 
-      transform: translateX(250%);
-      transition: 0.5s ease-in;
-      border-radius: px;
-      font-size: 13px;
-      z-index: 1000;
-    }
-  }
-
-  .nav__active {
-    transform: translateX(0);
-  }
-
-  .nav__active .line1 {
-    transform: rotate(45deg) translate(6.3px, 5px);
-  }
-
-  .nav__active .line2 {
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
     opacity: 0;
   }
-
-  .nav__active .line3 {
-    transform: rotate(-45deg) translate(6.2px, -5px);
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+.close-button {
+  position: absolute;
+  top: -15px;
+  right: 0px;
+  font-size: 44px;
+  cursor: pointer;
+  color: #000000;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.close-button:hover {
+  color: #ff0000;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+.popup-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.popup-description {
+  text-align: center;
+}
+
+.popup-description h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #000000;
+}
+
+.popup-description p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #000000;
+}
