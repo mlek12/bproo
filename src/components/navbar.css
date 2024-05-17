@@ -142,11 +142,11 @@
       right: 0%;
       top: 0%;
       width: 150px;
-      height: 100vh;
+      height: 70vh;
       background-color: rgba(0, 0, 0, 0.8);
       padding: 0px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(91px);
       flex-direction: column; 
       transform: translateX(250%);
       transition: 0.5s ease-in;
