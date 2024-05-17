@@ -87,7 +87,7 @@
 .close-button {
   position: absolute;
   top: -15px;
-  right: 0px;
+  right: 3px;
   font-size: 44px;
   cursor: pointer;
   color: #000000;
