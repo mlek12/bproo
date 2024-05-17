@@ -139,7 +139,7 @@
     .nav__menu {
       position: fixed;
       right: 0%;
-      top: 98%;
+      top: 99.9%;
       width: 150px;
       height: 70vh;
       background-color: rgba(0, 0, 0, 0.8);
