@@ -5,6 +5,7 @@ import MainPage from './components/main';
 import Gallery from './components/gallery';
 import Group from './components/group';
 import Weather from './components/weather';
+import Welcome from './components/welcome';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<Welcome />} />
           <Route path="/main" element={<MainPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/group" element={<Group />} />
