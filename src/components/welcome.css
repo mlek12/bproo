@@ -68,10 +68,10 @@
       margin-bottom: 20px;
     }
   
-    .right-image {
-      max-width: 70%;
+   .right-image {
+      max-width: 100%;
       margin-left: 0;
-      margin-top: 20px;
+      margin-top: 0px;
     }
   
     .center-text h1 {
