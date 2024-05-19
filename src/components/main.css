@@ -14,7 +14,6 @@
 .main-page p {
   font-size: 18px;
   line-height: 1.6;
-  color: #ffffff;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -25,14 +24,14 @@
   border-radius: 10px;
   padding: 30px;
   border-radius: 5px;
-  backdrop-filter: blur(100px);
+  background-color: #ffffff;
 }
 
 .main-page section p {
   font-size: 18px;
   line-height: 140%;
-  color: #ffffff;
-  text-shadow: 1px 1px 7px rgb(0, 0, 0);
+  color: #000000;
+ 
   text-align: justify;
 }
 
