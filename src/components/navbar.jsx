@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <>
       <nav className="nav">
-        <Link to="/main" className="nav__brand">
+        <Link to="/" className="nav__brand">
           <img src={logo} alt="Logo" className="nav__logo" />
           BantenPro
         </Link>
