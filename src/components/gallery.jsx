@@ -83,15 +83,16 @@ const Gallery = () => {
       <div className="card-container">
         {images.map((image, index) => (
           <div key={index} className="card">
-            <div className="card-image">
-              <img
-                src={image.url}
-                alt={image.title}
-                onClick={() => handleImageClick(image.description, image.url, image.title)}
-                className={showPopup && currentImageUrl === image.url ? 'image-overlay' : ''}
-              />
-            </div>
+          <div className="card-image">
+            <img
+              src={image.url}
+              alt={image.title}
+              onClick={() => handleImageClick(image.description, image.url, image.title)}
+              className={showPopup && currentImageUrl === image.url ? 'image-overlay' : ''}
+            />
+            <span className="click-text">Click here</span>
           </div>
+        </div>
         ))}
       </div>
       {showPopup && (
