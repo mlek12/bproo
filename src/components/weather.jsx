@@ -66,7 +66,7 @@ function Weather() {
         <div className="weather-icon">
           {weatherData.weather && weatherData.weather[0].icon && (
             <img
-              src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+              src={'http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'}
               alt="Weather Icon"
             />
           )}
