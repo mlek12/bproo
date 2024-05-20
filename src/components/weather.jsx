@@ -64,12 +64,13 @@ function Weather() {
       <h2>Weather in Banten</h2>
       <div className="weather-info">
         <div className="weather-icon">
-          {weatherData.weather && weatherData.weather[0].icon && (
-            <img
-              src={'http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'}
-              alt="Weather Icon"
-            />
-          )}
+          <div className="weather-icon">
+            {weatherData.weather && weatherData.weather[0].icon && (
+          <img
+            src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+            alt="Weather Icon"
+          />
+        )}
         </div>
         <div className="weather-details">
           <p>Temperature: {weatherData.main.temp}°C</p>
