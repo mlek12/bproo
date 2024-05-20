@@ -8,8 +8,7 @@
     justify-content: center;
     margin: auto;
     top: 150px;
-    background-color: rgb(24, 23, 23);
-  }
+}
   
   .weather-info {
     display: flex;
