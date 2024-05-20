@@ -5,67 +5,59 @@ function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [aqiData, setAqiData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const weatherResponse = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Banten&appid=c4b1d5421650120767dbde6c8df79d22&units=metric');
+        const weatherResponse = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=Banten&appid=c4b1d5421650120767dbde6c8df79d22&units=metric`
+        );
         const weatherData = await weatherResponse.json();
+        const { coord } = weatherData;
 
-        if (weatherData.coord) {
-          const { lat, lon } = weatherData.coord;
-          const aqiResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=c4b1d5421650120767dbde6c8df79d22`);
-          const aqiData = await aqiResponse.json();
-          setWeatherData(weatherData);
-          setAqiData(aqiData);
-        } else {
-          setError('Unable to fetch weather data');
-        }
+        const aqiResponse = await fetch(
+          `https://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=c4b1d5421650120767dbde6c8df79d22`
+        );
+        const aqiData = await aqiResponse.json();
 
+        setWeatherData(weatherData);
+        setAqiData(aqiData);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching weather data:', error);
-        setError('An error occurred while fetching weather data');
-        setLoading(false);
       }
     };
 
     fetchWeatherData();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   const getAqiLevel = (aqi) => {
-    switch (true) {
-      case aqi === 1:
+    switch (aqi) {
+      case 1:
         return 'Good';
-      case aqi === 2:
+      case 2:
         return 'Fair';
-      case aqi === 3:
+      case 3:
         return 'Moderate';
-      case aqi === 4:
+      case 4:
         return 'Poor';
-      case aqi === 5:
+      case 5:
         return 'Very Poor';
       default:
         return 'Unknown';
     }
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
   return (
     <div className="weather-container">
       <h2>Weather in Banten</h2>
       <div className="weather-info">
         <div className="weather-icon">
-          <div className="weather-icon">
-            {weatherData.weather && weatherData.weather[0].icon && (
+        {weatherData.weather && weatherData.weather[0].icon && (
           <img
             src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
             alt="Weather Icon"
